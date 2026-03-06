@@ -13,6 +13,11 @@ resource "aws_instance" "fct" {
                 yum install httpd -y
                 systemctl start httpd
                 systemctl enable httpd
-                echo "<h1> Hello word </h1>" > /var/www/html/index.html
+                yum install git -y
+                git clone https://github.com/aryakonly/static-website.git
+                mv static-website/* /var/www/html/
             EOF
+    tags = {
+      Name = "static-web"
+    }
 }
