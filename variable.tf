@@ -13,3 +13,7 @@ variable "key_pair" {
 variable "sg" {
   default = ["sg-01f81067fcda67f7b"]
 }
+variable "subnet" {
+    default = "subnet-02fc0fddbd38f4f9e"
+  
+}
